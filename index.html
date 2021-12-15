@@ -15,7 +15,7 @@
         <div class="container">
             <h2>Elenco di mail</h2>
             <ul>
-                <li v-for="(element) in mailArray">{{ element }}</li>
+                <li v-if="mailArray.length >= mailQuantity" v-for="(element) in mailArray">{{ element }}</li>
             </ul>
         </div>
     </div>

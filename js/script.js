@@ -4,17 +4,18 @@ const app = new Vue(
     {
         el: '#root',
         data: {
-            mailArray: []
+            mailArray: [],
+            mailQuantity: 10,
         },
         methods: {
             
         },
 
         created: function() {
-            
+
             // devo fare una funzione che prende 10 mail dall'API e le 
             // inserisce all'interno di mailArray
-            for( let i = 0; i < 10; i++ ) {
+            for( let i = 0; i < this.mailQuantity; i++ ) {
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then((response) => {
                     const singleMail = (response.data.response);
